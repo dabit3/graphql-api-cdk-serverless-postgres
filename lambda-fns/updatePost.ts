@@ -9,11 +9,11 @@ async function updatePost(post: Post) {
       if (item[0] === 'id') return;
       updateVariables[item[0]] = item[1];
       if (Object.keys(updateVariables).length > 2) {
-        query = `${query},`
+        query = `${query},`;
       }
-      query = `${query} ${item[0]} = :${item[0]} `
+      query = `${query} ${item[0]} = :${item[0]} `;
   })
-  query = query + ' where id = :id';
+  query = query + 'where id = :id';
   try {
       await db.query(query, updateVariables)
       return post
