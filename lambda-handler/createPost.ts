@@ -1,17 +1,16 @@
-const AWS = require('aws-sdk');
-const docClient = new AWS.DynamoDB.DocumentClient();
 import Post from './Post';
+import db from './db';
+const { v4: uuid } = require('uuid');
 
 async function createPost(post: Post) {
-    const params = {
-        TableName: process.env.POST_TABLE,
-        Item: post
-    }
+    if (!post.id) post.id = uuid()
+    const { id, title, content } = post
     try {
-        await docClient.put(params).promise();
+        const query = `INSERT INTO posts (id,title,content) VALUES(:id,:title,:content)`
+        await db.query(query, { id, title, content })
         return post;
     } catch (err) {
-        console.log('DynamoDB error: ', err);
+        console.log('Postgres error: ', err);
         return null;
     }
 }

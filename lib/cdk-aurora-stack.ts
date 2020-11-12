@@ -36,7 +36,7 @@ export class CdkAuroraStack extends cdk.Stack {
         SECRET_ARN: cluster?.secret?.secretArn || '',
       },
     });
-  
+    postFn.addEnvironment('DB_NAME', 'BlogDB');
     cluster.grantDataApiAccess(postFn)
 
     // set the new Lambda function as a data source for the AppSync API
@@ -46,7 +46,6 @@ export class CdkAuroraStack extends cdk.Stack {
       typeName: "Query",
       fieldName: "listPosts"
     });
-    
     lambdaDs.createResolver({
       typeName: "Mutation",
       fieldName: "createPost"

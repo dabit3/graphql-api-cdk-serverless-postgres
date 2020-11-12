@@ -4,6 +4,6 @@
 --  content text
 --);
 
---INSERT INTO posts VALUES ('1', 'My firs post', 'Hello World');
+--INSERT INTO posts VALUES ('1', 'My first post', 'Hello World');
 
 select * from posts

@@ -12,14 +12,11 @@ type AppSyncEvent = {
 }
 
 exports.handler = async (event:AppSyncEvent) => {
-    console.log('event: ', event);
     switch (event.info.fieldName) {
         case "createPost":
             return await createPost(event.arguments.post);
         case "listPosts":
-            const posts = await listPosts()
-            console.log('posts::::::: ', posts)
-            return posts
+            return await listPosts()
         default:
             return null;
     }

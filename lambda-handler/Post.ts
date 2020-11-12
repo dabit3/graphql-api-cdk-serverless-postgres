@@ -1,6 +1,6 @@
 type Post = {
   id: string;
-  name: string;
+  title: string;
   content: string;
 }
 export default Post
