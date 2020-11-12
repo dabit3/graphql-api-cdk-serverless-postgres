@@ -6,7 +6,7 @@ async function listPosts() {
         return result.records;
     } catch (err) {
         console.log('Postgres error: ', err);
-        return null
+        return null;
     }
 }
 
