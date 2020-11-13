@@ -11,13 +11,13 @@ To deploy this project, follow these steps.
 1. Clone the project
 
 ```sh
-git clone https://github.com/dabit3/cdk-graphql-backend.git 
+git clone https://github.com/dabit3/graphql-api-cdk-serverless-postgres.git
 ```
 
 2. Change into the directory and install dependencies
 
 ```sh
-cd cdk-graphql-backend
+cd graphql-api-cdk-serverless-postgres
 
 npm install
 ```
@@ -36,7 +36,7 @@ cdk deploy --O cdk-exports.json
 
 5. Create the posts table
 
-Visit the [RDS dashboard](https://console.aws.amazon.com/rds/home) and click on __Query Editor__. From the dropdown menu, choose the database (it should begin with __cdkaurorastack-aurorablogcluster__).
+Visit the [RDS dashboard](https://console.aws.amazon.com/rds/home) and click on __Query Editor__. From the dropdown menu, choose the database (it should begin with __appsynccdkrdsstack-aurorablogcluster__).
 
 For the Database username, choose __Connect with a Secrets Manager ARN__.
 
@@ -56,7 +56,7 @@ CREATE TABLE posts (
 
 6. Testing the API
 
-Next, visit the [AppSync console](AppSync console) and click on the API name to view the dashboard for your API.
+Next, visit the [AppSync console](https://console.aws.amazon.com/appsync/home) and click on the API name to view the dashboard for your API.
 
 Next click on __Queries__ in the left hand menu to view the query editor. From here, we can test out the API by running the following queries and mutations:
 
