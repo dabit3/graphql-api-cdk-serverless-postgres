@@ -56,7 +56,7 @@ CREATE TABLE posts (
 
 6. Testing the API
 
-Next, visit the [AppSync console](https://console.aws.amazon.com/appsync/home) and click on the API name to view the dashboard for your API.
+Next, visit the [AppSync console](https://console.aws.amazon.com/appsync/home) and click on __cdk-blog-appsync-api__ to view the dashboard for your API.
 
 Next click on __Queries__ in the left hand menu to view the query editor. From here, we can test out the API by running the following queries and mutations:
 
