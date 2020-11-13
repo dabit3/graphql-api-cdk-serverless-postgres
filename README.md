@@ -36,7 +36,7 @@ cdk deploy --O cdk-exports.json
 
 5. Create the posts table
 
-Visit the [RDS dashboard](RDS dashboard) and click on __Query Editor__. From the dropdown menu, choose the database (it should begin with __cdkaurorastack-aurorablogcluster__).
+Visit the [RDS dashboard](https://console.aws.amazon.com/rds/home) and click on __Query Editor__. From the dropdown menu, choose the database (it should begin with __cdkaurorastack-aurorablogcluster__).
 
 For the Database username, choose __Connect with a Secrets Manager ARN__. To sign in, you will need the ARN from the secret that was created by CDK. To get this secret, in a new window open AWS Secrets manager. Here, click on the secret that was created by CDK (it should start with AuroraBlogClusterSecret). Copy the Secret ARN to your clipboard and go back to the RDS Query Editor.
 
