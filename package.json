@@ -1,8 +1,8 @@
 {
-  "name": "cdk-aurora",
+  "name": "appsync-cdk-rds",
   "version": "0.1.0",
   "bin": {
-    "cdk-aurora": "bin/cdk-aurora.js"
+    "cdk-aurora": "bin/appsync-cdk-rds.js"
   },
   "scripts": {
     "build": "tsc",
@@ -21,11 +21,11 @@
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/aws-appsync": "^1.72.0",
-    "@aws-cdk/aws-lambda": "^1.72.0",
-    "@aws-cdk/aws-rds": "^1.72.0",
-    "@aws-cdk/core": "1.72.0",
-    "data-api-client": "^1.1.0",
+    "@aws-cdk/aws-appsync": "^1.73.0",
+    "@aws-cdk/aws-ec2": "^1.73.0",
+    "@aws-cdk/aws-lambda": "^1.73.0",
+    "@aws-cdk/aws-rds": "^1.73.0",
+    "@aws-cdk/core": "1.73.0",
     "source-map-support": "^0.5.16"
   }
 }

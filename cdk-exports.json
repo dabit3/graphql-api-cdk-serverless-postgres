@@ -1,7 +1,0 @@
-{
-  "CdkAuroraStack": {
-    "AppSyncAPIURL": "https://wcb5wzwpqffslotobkuffehs4q.appsync-api.us-east-1.amazonaws.com/graphql",
-    "AppSyncAPIKey": "da2-yds2vs3cwnfmtp6hfsv5ldb6pq",
-    "ProjectRegion": "us-east-1"
-  }
-}
