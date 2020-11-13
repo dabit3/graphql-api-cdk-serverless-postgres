@@ -1,8 +1,8 @@
-# CDK API with GraphQL and Aurora Serverless Postgres
+# CDK API with GraphQL and Aurora Serverless PostgreSQL
 
-This CDK stack deploys a real-time GraphQL API built with AWS AppSync, Amazon Aurora Serverless, and AWS Lambda.
+This CDK stack deploys a real-time GraphQL API built with AWS AppSync, Amazon Aurora Serverless PostgreSQL, and AWS Lambda.
 
-![CDK API with GraphQL and Aurora Serverless Postgres](header.jpg)
+![CDK API with GraphQL and Aurora Serverless PostgreSQL](header.jpg)
 
 ## Getting started
 
