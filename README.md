@@ -14,7 +14,7 @@ To deploy this project, follow these steps.
 git clone https://github.com/dabit3/graphql-api-cdk-serverless-postgres.git
 ```
 
-2. Change into the directory and install dependencies
+2. Change into the new directory and install dependencies
 
 ```sh
 cd graphql-api-cdk-serverless-postgres
@@ -22,19 +22,27 @@ cd graphql-api-cdk-serverless-postgres
 npm install
 ```
 
-3. Run the build
+3. Change into the __lambda-fns__ directory and install the dependencies for the Lambda function package:
+
+```sh
+cd lambda-fns
+npm install
+cd ..
+```
+
+4. Run the build
 
 ```sh
 npm run build
 ```
 
-4. Deploy the stack
+5. Deploy the stack
 
 ```sh
 cdk deploy --O cdk-exports.json
 ```
 
-5. Create the posts table
+6. Create the posts table
 
 Visit the [RDS dashboard](https://console.aws.amazon.com/rds/home) and click on __Query Editor__. From the dropdown menu, choose the database (it should begin with __appsynccdkrdsstack-aurorablogcluster__).
 
@@ -54,7 +62,7 @@ CREATE TABLE posts (
 );
 ```
 
-6. Testing the API
+7. Testing the API
 
 Next, visit the [AppSync console](https://console.aws.amazon.com/appsync/home) and click on __cdk-blog-appsync-api__ to view the dashboard for your API.
 
