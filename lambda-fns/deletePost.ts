@@ -4,8 +4,8 @@ async function deletePost(postId: string) {
     try {
         const query = `DELETE FROM posts WHERE id = :postId`;
         const result = await db.query(query, { postId });
-        console.log("result from delete!: ", result)
-        return postId;
+        if (result.numberOfRecordsUpdated === 1) return postId;
+        return null;
     } catch (err) {
         console.log('Postgres error: ', err);
         return null;

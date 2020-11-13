@@ -1,9 +1,9 @@
 -- Create a new table
---CREATE TABLE posts (
---  id text,
+-- CREATE TABLE posts (
+--  id text UNIQUE,
 --  title text,
 --  content text
---);
+-- );
 
 -- Create a new item
 --INSERT INTO posts VALUES ('1', 'My first post', 'Hello World');
