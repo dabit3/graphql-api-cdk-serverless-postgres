@@ -3,7 +3,6 @@ import * as ec2 from '@aws-cdk/aws-ec2';
 import * as lambda from '@aws-cdk/aws-lambda';
 import * as rds from '@aws-cdk/aws-rds';
 import * as appsync from '@aws-cdk/aws-appsync';
-import { Duration } from '@aws-cdk/core';
 
 export class CdkAuroraStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -31,7 +30,7 @@ export class CdkAuroraStack extends cdk.Stack {
       parameterGroup: rds.ParameterGroup.fromParameterGroupName(this, 'ParameterGroup', 'default.aurora-postgresql10'),
       defaultDatabaseName: 'BlogDB',
       vpc,
-      scaling: { autoPause: Duration.seconds(0) } // Optional. If not set, then instance will pause after 5 minutes 
+      scaling: { autoPause: cdk.Duration.seconds(0) } // Optional. If not set, then instance will pause after 5 minutes 
     });
 
     // Create the Lambda function that will map GraphQL operations into Postgres
