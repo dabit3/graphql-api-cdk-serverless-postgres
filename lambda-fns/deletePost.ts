@@ -3,7 +3,8 @@ import db from './db';
 async function deletePost(postId: string) {
     try {
         const query = `DELETE FROM posts WHERE id = :postId`;
-        await db.query(query, { postId });
+        const result = await db.query(query, { postId });
+        console.log("result from delete!: ", result)
         return postId;
     } catch (err) {
         console.log('Postgres error: ', err);

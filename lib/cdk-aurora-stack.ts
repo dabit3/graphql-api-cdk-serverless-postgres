@@ -23,7 +23,7 @@ export class CdkAuroraStack extends cdk.Stack {
       },
     });
 
-    // Create the VPC needed for the Aurora DB cluster
+    // Create the VPC needed for the Aurora Serverless DB cluster
     const vpc = new ec2.Vpc(this, 'BlogAppVPC');
     // Create the Serverless Aurora DB cluster; set the engine to Postgres
     const cluster = new rds.ServerlessCluster(this, 'AuroraBlogCluster', {
@@ -37,18 +37,18 @@ export class CdkAuroraStack extends cdk.Stack {
     // Create the Lambda function that will map GraphQL operations into Postgres
     const postFn = new lambda.Function(this, 'MyFunction', {
       runtime: lambda.Runtime.NODEJS_10_X,
-      handler: 'index.handler',
       code: new lambda.AssetCode('lambda-fns'),
+      handler: 'index.handler',
       memorySize: 1024,
       environment: {
         CLUSTER_ARN: cluster.clusterArn,
-        SECRET_ARN: cluster?.secret?.secretArn || '',
+        SECRET_ARN: cluster.secret?.secretArn || '',
         DB_NAME: 'BlogDB',
         AWS_NODEJS_CONNECTION_REUSE_ENABLED: '1'
       },
     });
+    // Grant access to the cluster from the Lambda function
     cluster.grantDataApiAccess(postFn);
-
     // Set the new Lambda function as a data source for the AppSync API
     const lambdaDs = api.addLambdaDataSource('lambdaDatasource', postFn);
 
