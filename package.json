@@ -2,7 +2,7 @@
   "name": "appsync-cdk-rds",
   "version": "0.1.0",
   "bin": {
-    "cdk-aurora": "bin/appsync-cdk-rds.js"
+    "appsync-cdk-rds": "bin/appsync-cdk-rds.js"
   },
   "scripts": {
     "build": "tsc",
