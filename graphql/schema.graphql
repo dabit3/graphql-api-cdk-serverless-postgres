@@ -32,6 +32,6 @@ type Subscription {
     @aws_subscribe(mutations: ["createPost"])
   onUpdatePost: Post
     @aws_subscribe(mutations: ["updatePost"])
-  onDeletePost: Post
+  onDeletePost: String
     @aws_subscribe(mutations: ["deletePost"])
 }
